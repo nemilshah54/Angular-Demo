@@ -10,6 +10,7 @@ module.exports = function (config) {
       require('karma-chrome-launcher'),
       require('karma-jasmine-html-reporter'),
       require('karma-coverage-istanbul-reporter'),
+      require('karma-phantomjs-launcher'),
       require('@angular-devkit/build-angular/plugins/karma')
     ],
     client: {
@@ -26,21 +27,22 @@ module.exports = function (config) {
     logLevel: config.LOG_INFO,
     
     
-    autoWatch: true,
-    customLaunchers: {
-  ChromeHeadless: {
-    base: 'Chrome',
-    flags: [
-      '--headless',
-      '--disable-gpu',
-      '--no-sandbox',
-      '--remote-debugging-port=9222',
-    ]
-  }
-},
-browsers: ['ChromeHeadless'],
-
+      customLaunchers: {
+      ChromeHeadless:  {
+        base: 'Chrome',
+        flags:  [
+          '--headless',
+          '--disable-gpu',
+          '--no-sandbox',
+          '--remote-debugging-port=9222'
+        ],
+      }
+    },
+    autoWatch: false,
+    browserNoActivityTimeout: 70000,
+    browsers: ['ChromeHeadless'],
     singleRun: true,
+    
     restartOnFileChange: true
   });
 };

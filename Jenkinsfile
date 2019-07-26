@@ -6,7 +6,7 @@ pipeline {
       
       stage('Install') {
             steps {
-                bat 'node_modules/.bin/npm install' 
+                bat 'npm install' 
             }
         }
         

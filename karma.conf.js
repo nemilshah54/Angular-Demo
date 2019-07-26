@@ -26,13 +26,13 @@ module.exports = function (config) {
     logLevel: config.LOG_INFO,
     
     
-     browsers: ['ChromeNoSandbox'],
-    customLaunchers: {
-         ChromeNoSandbox: {
-            base: 'ChromeHeadless',
-            flags: ['--no-sandbox'],
-  },
-}
+    browsers: ["Chrome", "HeadlessChrome"],
+customLaunchers: {
+    HeadlessChrome: {
+    base: "ChromeHeadless",
+    flags: ["--no-sandbox"]
+    }
+},
     singleRun: true,
     
     restartOnFileChange: true

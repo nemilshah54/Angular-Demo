@@ -19,7 +19,7 @@ pipeline {
       
        stage('Test') {
             steps {
-                bat 'node_modules/.bin/npm test'
+                bat 'npm test'
             }
         }
         

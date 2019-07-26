@@ -6,7 +6,7 @@ pipeline {
          
            stage('Compile') {
             steps {
-                bat 'node_modules/.bin/ng build' 
+                bat 'ng build' 
             }
         }
         

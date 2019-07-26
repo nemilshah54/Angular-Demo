@@ -12,7 +12,7 @@ pipeline {
       
        stage('Test') {
             steps {
-                bat 'node_modules/.bin/ng test --single-run --code-coverage'
+                bat 'node_modules/.bin/ng tests --watch=false'
             }
         }
         

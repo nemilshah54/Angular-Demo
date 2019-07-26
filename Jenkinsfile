@@ -19,7 +19,7 @@ pipeline {
       
        stage('Test') {
             steps {
-                bat 'ng test'
+                bat 'node_modules/.bin/ng test'
             }
         }
         

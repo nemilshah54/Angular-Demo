@@ -12,7 +12,7 @@ pipeline {
       
        stage('Test') {
             steps {
-                bat 'node_modules/.bin/ng test --single-run --browsers Chrome_no_sandbox'
+                bat 'node_modules/.bin/ng test --watch false'
             }
         }
         

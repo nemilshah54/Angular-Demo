@@ -6,7 +6,7 @@ pipeline {
       
       stage('Install') {
             steps {
-                bat 'npm install --save-dev karma-phantomjs-launcher' 
+                bat 'npm install' 
             }
         }
         
@@ -19,7 +19,7 @@ pipeline {
       
        stage('Test') {
             steps {
-                bat 'node_modules/.bin/ng test'
+                bat 'node_modules/.bin/ng test --browsers=HeadlessChrome --watch=false'
             }
         }
         

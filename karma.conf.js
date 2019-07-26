@@ -26,13 +26,15 @@ module.exports = function (config) {
     logLevel: config.LOG_INFO,
     
     
-    browsers: ["Chrome", "HeadlessChrome"],
-customLaunchers: {
-    HeadlessChrome: {
-    base: "ChromeHeadless",
-    flags: ["--no-sandbox"]
-    }
-},
+      browsers: ['Chrome'],
+    browserDisconnectTimeout: 10000,
+    browserDisconnectTolerance: 3,
+    browserNoActivityTimeout: 60000,
+    flags: [
+      '--disable-web-security',
+      '--disable-gpu',
+      '--no-sandbox'
+    ]
     singleRun: true,
     
     restartOnFileChange: true

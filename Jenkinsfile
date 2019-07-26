@@ -19,7 +19,7 @@ pipeline {
       
        stage('Test') {
             steps {
-                bat 'node_modules/.bin/ng test --browsers=Chrome --watch=false'
+                bat 'node_modules/.bin/ng test'
             }
         }
         

@@ -12,7 +12,7 @@ pipeline {
       
        stage('Test') {
             steps {
-                bat 'node_modules/.bin/ng test --single-run'
+                bat 'node_modules/.bin/ng test --config karma.conf.ci.js --code-coverage --progress=false'
             }
         }
         

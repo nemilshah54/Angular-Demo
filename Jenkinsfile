@@ -19,7 +19,7 @@ pipeline {
       
        stage('Test') {
             steps {
-                bat 'npm test'
+                bat 'ng test'
             }
         }
         

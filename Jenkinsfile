@@ -6,7 +6,7 @@ pipeline {
       
       stage('Install') {
             steps {
-                bat 'npm install' 
+                bat 'npm i puppeteer' 
             }
         }
         

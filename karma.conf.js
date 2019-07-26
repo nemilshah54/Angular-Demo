@@ -10,7 +10,6 @@ module.exports = function (config) {
       require('karma-chrome-launcher'),
       require('karma-jasmine-html-reporter'),
       require('karma-coverage-istanbul-reporter'),
-      require('karma-phantomjs-launcher'),
       require('@angular-devkit/build-angular/plugins/karma')
     ],
     client: {
@@ -27,9 +26,13 @@ module.exports = function (config) {
     logLevel: config.LOG_INFO,
     
     
-    browsers: ['PhantomJS'],
-    autoWatch: false,
-    browserNoActivityTimeout: 70000,
+     browsers: ['ChromeNoSandbox'],
+    customLaunchers: {
+         ChromeNoSandbox: {
+            base: 'ChromeHeadless',
+            flags: ['--no-sandbox'],
+  },
+}
     singleRun: true,
     
     restartOnFileChange: true

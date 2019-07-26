@@ -34,7 +34,7 @@ module.exports = function (config) {
       '--disable-web-security',
       '--disable-gpu',
       '--no-sandbox'
-    ]
+    ],
     singleRun: true,
     
     restartOnFileChange: true

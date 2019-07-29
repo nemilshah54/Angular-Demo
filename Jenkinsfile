@@ -7,6 +7,7 @@ pipeline {
       stage('Install') {
             steps {
                 bat 'npm i puppeteer' 
+                bat 'npm install'
             }
         }
         
@@ -23,11 +24,10 @@ pipeline {
             }
         }
       
-      stage('Deploy') {
+      stage('Publish') {
             steps {        
-                bat 'npm i -g angular-cli-ghpages'
-                bat 'node_modules/.bin/ng build --prod --base-href https://github.com/nemilshah54/Angular-Demo.git/'
-                bat 'angular-cli-ghpages'
+               bat 'del sample.content'
+               bat '7z a -tzip sample.content -r dist'
             }
         }
         

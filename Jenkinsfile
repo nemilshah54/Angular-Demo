@@ -22,14 +22,5 @@ pipeline {
                 bat 'node_modules/.bin/ng test'
             }
         }
-      
-      stage('Deploy') {
-            steps {        
-                bat 'npm i -g angular-cli-ghpages'
-                bat 'node_modules/.bin/ng build --prod --base-href https://github.com/nemilshah54/Angular-Demo.git/'
-                bat 'angular-cli-ghpages'
-            }
-        }
-        
     }
 }
